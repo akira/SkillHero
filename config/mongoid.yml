@@ -10,7 +10,7 @@ test:
 # MONGOHQ_URL configured when mongoid add on added 
 production: 
   uri: <%= ENV['MONGOHQ_URL'] %>
-    # slaves:
+  # slaves:
   #   - host: slave1.local
   #     port: 27018
   #   - host: slave2.local
