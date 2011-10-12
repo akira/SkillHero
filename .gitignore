@@ -1,0 +1,15 @@
+nbproject/*
+.bundle
+db/*.sqlite3
+log/*
+.sass-cache/*
+tmp/**/*
+tmp/*
+tmp/pids/*
+doc/api
+doc/app
+*.swp
+*~
+.DS_Store
+.rvmrc
+dump.rdb
