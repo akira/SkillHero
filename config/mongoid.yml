@@ -7,13 +7,10 @@ test:
   database: startup_weekend_test
 
 # set these environment variables on your prod server
-production:
-  host: <%= ENV['MONGOID_HOST'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
-  username: <%= ENV['MONGOID_USERNAME'] %>
-  password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
-  # slaves:
+# MONGOHQ_URL configured when mongoid add on added 
+production: 
+  uri: <%= ENV['MONGOHQ_URL'] %>
+    # slaves:
   #   - host: slave1.local
   #     port: 27018
   #   - host: slave2.local
