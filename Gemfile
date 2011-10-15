@@ -24,6 +24,8 @@ gem 'inherited_resources'
 
 gem 'web-app-theme', '~> 0.8.0'
 
+gem 'omniauth','0.3.0'
+
 gem 'haml'
 gem 'jquery-rails'
 
