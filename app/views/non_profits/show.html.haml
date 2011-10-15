@@ -11,6 +11,9 @@
       %ul
         - @non_profit.projects.each do |project|
           %li= link_to project.name, project
-      %h3= link_to 'Add a new Project', new_project_path        
+        - if @non_profit.projects.blank?
+          %li No Active Projects
+      - if current_non_profit == @non_profit
+        %h3= link_to 'Add a new Project', new_project_path        
       .wat-cf
 - content_for :sidebar, render(:partial => 'sidebar')

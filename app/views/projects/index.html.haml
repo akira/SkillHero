@@ -24,9 +24,9 @@
               = project.time            
             %td.last
               - if current_non_profit
-                = link_to "#{t("web-app-theme.show", :default => "Show")}", project_path(project)
-                |\#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_project_path(project)} |
-                \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", project_path(project), :method => :delete, :confirm    =>"#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+                = link_to "#{t("web-app-theme.show", :default => "View")}", project_path(project)
+                | #{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_project_path(project)} 
+                | #{link_to "#{t("web-app-theme.delete", :default => "Delete")}", project_path(project), :method => :delete, :confirm    =>"#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
               - elsif current_user
                 = link_to "Join Project", join_project_path(project), :method=>:post
       .actions-bar.wat-cf
