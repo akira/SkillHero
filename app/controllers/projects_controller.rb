@@ -5,7 +5,7 @@ class ProjectsController < InheritedResources::Base
   end
   
   def join
-    current_user.projects.concat Project.find(params[:id])
+    current_user.join_project Project.find(params[:id])
     redirect_to current_user
   end
   

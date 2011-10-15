@@ -10,4 +10,9 @@ class User
   field :linked_in_url
   
   has_many :projects
+  
+  def join_project(project)
+    projects << project
+    save!
+  end
 end
