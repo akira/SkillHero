@@ -18,10 +18,6 @@
             %td{:width=>'250px'}= link_to non_profit.name, non_profit
             %td #{non_profit.city}, #{non_profit.state}              
             %td.last
-              = link_to "#{t("web-app-theme.show", :default => "Show")}", non_profit_path(non_profit)
-              |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_non_profit_path(non_profit)} |
-              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", non_profit_path(non_profit), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
       .actions-bar.wat-cf
         .actions
 - content_for :sidebar, render(:partial => 'sidebar')
