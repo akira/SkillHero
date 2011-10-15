@@ -31,9 +31,9 @@
         = @user.location
       %p
         %b
-          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "Job Description"))
+          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "LinkIn Profile"))
           \:
-        = @user.job_title
+        = link_to @user.linked_in_url,@user.linked_in_url, :target=>'_blank'
 
       .wat-cf
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_user_path(@user), :class => "button"
