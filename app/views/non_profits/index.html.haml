@@ -13,7 +13,6 @@
           %th.first ID
           %th
             = t("activerecord.attributes.non_profit._type", :default => t("activerecord.labels._type", :default => "_type"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
           %th.last &nbsp;
         - @non_profits.each do |non_profit|
           %tr{:class => cycle("odd", "even")}
@@ -21,8 +20,6 @@
               = non_profit.id
             %td
               = link_to non_profit._type, non_profit_path(non_profit)
-            %td
-              = non_profit.created_at
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", non_profit_path(non_profit)
               |

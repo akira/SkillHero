@@ -2,10 +2,11 @@ StartupWeekend::Application.routes.draw do
   resources :users
   resources :projects
   resources :non_profits
+  resources :companies
   
-  match 'volunteer'=>"home#volunteer", :as=>:volunteer
-  match 'non_profit'=>"home#non_profit", :as=>:non_profit
-  match 'company'=>"home#company", :as=>:company    
+  match 'volunteer'=>"home#volunteer", :as=>:volunteer_info
+  match 'non_profit'=>"home#non_profit", :as=>:non_profit_info
+  match 'company'=>"home#company", :as=>:company_info
   root :to => "home#index"
   
   

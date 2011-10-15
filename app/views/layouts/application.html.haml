@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title SkilLHero
+    %title SkillHero
     = stylesheet_link_tag 'web_app_theme'
     = javascript_include_tag :defaults, :cache => true
     = csrf_meta_tag
@@ -9,7 +9,7 @@
     #container
       #header
         %h1
-          %a{:href => "/"} SkilLHero
+          %a{:href => "/"} SkillHero
         #user-navigation
           %ul.wat-cf
             %li
@@ -36,6 +36,6 @@
           #footer
             .block
               %p
-                Copyright &copy; #{Time.now.year} SkilLHero.
+                Copyright &copy; #{Time.now.year} SkillHero.
         #sidebar
           = yield :sidebar
