@@ -40,3 +40,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+#For JS runtime for asset pipeline
+gem 'execjs', :group=>:production
+gem 'therubyracer', :git=>'http://github.com/cowboyd/therubyracer.git', :group=>:production
