@@ -10,7 +10,12 @@ class AuthController < ApplicationController
       :profile_image_url=>auth_info['image'],       
       :linked_in_url=>auth_info['urls']['LinkedIn'],             
       :job_title=>auth_info['description']
-    session[:user_id] = @user.id    
+    session[:user_id] = @user.id        
     redirect_to user_url(@user.id)
+  end
+  
+  def logout
+    [:user_id, :non_profit_id].each{|key| session[key] = nil}
+    redirect_to root_url
   end
 end

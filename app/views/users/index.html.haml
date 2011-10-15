@@ -18,11 +18,11 @@
         - @users.each do |user|
           %tr{:class => cycle("odd", "even")}
             %td
-              = user.id
+              = user.first_name
             %td
-              = link_to user._type, user_path(user)
+              = user.last_name          
             %td
-              = user.created_at
+              = user.job_title              
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", user_path(user)
               |

@@ -8,6 +8,7 @@ StartupWeekend::Application.routes.draw do
   match 'non_profit'=>"home#non_profit", :as=>:non_profit_info
   match 'company'=>"home#company", :as=>:company_info
   match '/auth/linked_in/callback'=>"auth#callback"
+  match 'logout'=>"auth#logout", :as=>:logout  
   root :to => "home#index"
   
   
