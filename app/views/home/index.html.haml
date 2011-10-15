@@ -3,11 +3,11 @@
 %table{:width=>'100%'}
   %tr
     %td
-      %h3 Volunteer?
+      %h3= link_to 'Volunteer?', volunteer_path
     %td
-      %h3 Non Profit?      
+      %h3= link_to 'Non Profit?', non_profit_path
     %td
-      %h3 Company?
+      %h3= link_to 'Company?', company_path
 %br 
-%br 
+%br #{link_to '* I just want to browse available projects', projects_path}
 %br 

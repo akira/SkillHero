@@ -3,7 +3,11 @@ StartupWeekend::Application.routes.draw do
   resources :projects
   resources :non_profits
   
+  match 'volunteer'=>"home#volunteer", :as=>:volunteer
+  match 'non_profit'=>"home#non_profit", :as=>:non_profit
+  match 'company'=>"home#company", :as=>:company    
   root :to => "home#index"
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
