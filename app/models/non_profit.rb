@@ -11,4 +11,10 @@ class NonProfit
   
   validates_presence_of :name, :email, :password, :city, :state
   has_many :projects
+  
+  def add_project(project)
+    project.save!
+    projects << project
+    self.save!
+  end
 end

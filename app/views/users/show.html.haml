@@ -37,13 +37,13 @@
       .wat-cf
 
       %h3 Volunteer Projects:
-      - if current_user.projects.blank?
+      - if current_user.user_projects.blank?
         - if current_user
           %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
       - else
         %ul
-          - current_user.projects.each do |project|
-            %li= link_to project.name, project_path(project)
+          - current_user.user_projects.each do |user_project|
+            %li= link_to user_project.project.name, project_path(user_project.project)
         - if current_user          
           %h4 #{link_to 'Volunteer for another Project', projects_url}      
 - content_for :sidebar, render(:partial => 'sidebar')

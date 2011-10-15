@@ -1,9 +1,8 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", projects_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_project_path
-      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", project_path
+      %li= link_to "#{t("web-app-theme.new", :default => "Non Profit")}", non_profit_path(@project.non_profit)
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Project")}", project_path
   .content
     .inner
       %p
@@ -27,6 +26,7 @@
           \:
         = @project.time
       .wat-cf
+      - if current_non_profit
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_project_path(@project), :class => "button"
         = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), project_path(@project), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
 - content_for :sidebar, render(:partial => 'sidebar')

@@ -9,10 +9,10 @@ class User
   field :location
   field :linked_in_url
   
-  has_many :projects
+  embeds_many :user_projects
   
   def join_project(project)
-    projects << project
+    user_projects.create! :project=>project
     save!
   end
 end

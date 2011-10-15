@@ -1,16 +1,15 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", non_profits_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_non_profit_path
-      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", non_profit_path
+      %li.first= link_to "All Non Profits", non_profits_path
+      %li.active= link_to @non_profit.name, non_profit_path
   .content
     .inner
       %h2 #{@non_profit.name}
       %br
       %h3 Current Active Projects:
       %ul
-        - Project.all.each do |project|
+        - @non_profit.projects.each do |project|
           %li= link_to project.name, project
       %h3= link_to 'Add a new Project', new_project_path        
       .wat-cf
