@@ -18,6 +18,13 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'hpricot'
+gem 'ruby_parser'
+gem 'inherited_resources'
+
+gem 'web-app-theme', '~> 0.8.0'
+
+gem 'haml'
 gem 'jquery-rails'
 
 # Use unicorn as the web server
