@@ -14,6 +14,4 @@
           %li= link_to project.name, project
       %h3= link_to 'Add a new Project', new_project_path        
       .wat-cf
-        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_non_profit_path(@non_profit), :class => "button"
-        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), non_profit_path(@non_profit), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
 - content_for :sidebar, render(:partial => 'sidebar')
