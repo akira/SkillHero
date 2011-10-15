@@ -2,8 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 #require 'rails/all'
 
-#require 'rails/all'
-
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
@@ -15,7 +13,7 @@ if defined?(Bundler)
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
-
+ 
 module StartupWeekend
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
