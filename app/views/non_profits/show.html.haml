@@ -1,0 +1,57 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", non_profits_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_non_profit_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", non_profit_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.non_profit._type", :default => t("activerecord.labels._type", :default => " type"))
+          \:
+        = @non_profit._type
+      %p
+        %b
+          = t("activerecord.attributes.non_profit._id", :default => t("activerecord.labels._id", :default => ""))
+          \:
+        = @non_profit._id
+      %p
+        %b
+          = t("activerecord.attributes.non_profit.name", :default => t("activerecord.labels.name", :default => "Name"))
+          \:
+        = @non_profit.name
+      %p
+        %b
+          = t("activerecord.attributes.non_profit.address", :default => t("activerecord.labels.address", :default => "Address"))
+          \:
+        = @non_profit.address
+      %p
+        %b
+          = t("activerecord.attributes.non_profit.city", :default => t("activerecord.labels.city", :default => "City"))
+          \:
+        = @non_profit.city
+      %p
+        %b
+          = t("activerecord.attributes.non_profit.state", :default => t("activerecord.labels.state", :default => "State"))
+          \:
+        = @non_profit.state
+      %p
+        %b
+          = t("activerecord.attributes.non_profit.zip", :default => t("activerecord.labels.zip", :default => "Zip"))
+          \:
+        = @non_profit.zip
+      %p
+        %b
+          = t("activerecord.attributes.non_profit.phone", :default => t("activerecord.labels.phone", :default => "Phone"))
+          \:
+        = @non_profit.phone
+      %p
+        %b
+          = t("activerecord.attributes.non_profit.email", :default => t("activerecord.labels.email", :default => "Email"))
+          \:
+        = @non_profit.email
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_non_profit_path(@non_profit), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), non_profit_path(@non_profit), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

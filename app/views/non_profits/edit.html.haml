@@ -1,0 +1,14 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", non_profits_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_non_profit_path
+      %li.active= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_non_profit_path
+  .content
+    %h2.title
+      = t("web-app-theme.edit", :default => "Edit")
+      NonProfit
+    .inner
+      = form_for @non_profit, :url => non_profit_path(@non_profit), :html => { :class => :form } do |f|
+        = render :partial => "form", :locals => {:f => f}
+- content_for :sidebar, render(:partial => 'sidebar')

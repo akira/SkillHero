@@ -1,0 +1,33 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", non_profits_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_non_profit_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      NonProfits
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.non_profit._type", :default => t("activerecord.labels._type", :default => "_type"))
+          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th.last &nbsp;
+        - @non_profits.each do |non_profit|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = non_profit.id
+            %td
+              = link_to non_profit._type, non_profit_path(non_profit)
+            %td
+              = non_profit.created_at
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", non_profit_path(non_profit)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_non_profit_path(non_profit)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", non_profit_path(non_profit), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+- content_for :sidebar, render(:partial => 'sidebar')
