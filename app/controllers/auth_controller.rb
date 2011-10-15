@@ -17,5 +17,5 @@ class AuthController < ApplicationController
   def logout
     [:user_id, :non_profit_id].each{|key| session[key] = nil}
     redirect_to root_url
-  end
+  end  
 end

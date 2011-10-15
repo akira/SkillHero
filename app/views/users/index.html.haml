@@ -10,24 +10,17 @@
     .inner
       %table.table
         %tr
-          %th.first ID
-          %th
-            = t("activerecord.attributes.user._type", :default => t("activerecord.labels._type", :default => "_type"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
-          %th.last &nbsp;
+          %th.first First Name
+          %th Last Name
+          %th.last Title
         - @users.each do |user|
           %tr{:class => cycle("odd", "even")}
-            %td
+            %td{:width=>'120px'}
               = user.first_name
             %td
               = user.last_name          
-            %td
-              = user.job_title              
             %td.last
-              = link_to "#{t("web-app-theme.show", :default => "Show")}", user_path(user)
-              |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_user_path(user)} |
-              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", user_path(user), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+              = user.job_title              
       .actions-bar.wat-cf
         .actions
 - content_for :sidebar, render(:partial => 'sidebar')
