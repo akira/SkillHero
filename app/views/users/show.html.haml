@@ -8,14 +8,7 @@
     .inner
       %p
         %b
-          = t("activerecord.attributes.user._type", :default => t("activerecord.labels._type", :default => " type"))
-          \:
-        = @user._type
-      %p
-        %b
-          = t("activerecord.attributes.user._id", :default => t("activerecord.labels._id", :default => ""))
-          \:
-        = @user._id
+          = image_tag @user.profile_image_url
       %p
         %b
           = t("activerecord.attributes.user.first_name", :default => t("activerecord.labels.first_name", :default => "First name"))
@@ -28,9 +21,20 @@
         = @user.last_name
       %p
         %b
-          = t("activerecord.attributes.user.email", :default => t("activerecord.labels.email", :default => "Email"))
+          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "Job Title"))
           \:
-        = @user.email
+        = @user.job_title
+      %p
+        %b
+          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "Location"))
+          \:
+        = @user.location
+      %p
+        %b
+          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "Job Description"))
+          \:
+        = @user.job_title
+
       .wat-cf
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_user_path(@user), :class => "button"
         = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), user_path(@user), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
