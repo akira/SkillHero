@@ -1,26 +1,19 @@
 .group
-  = f.label :_type, t("activerecord.attributes.project._type", :default => " type"), :class => :label
-  = f.text_field :_type, :class => 'text_field'
-  %span.description Ex: a simple text
-.group
-  = f.label :_id, t("activerecord.attributes.project._id", :default => ""), :class => :label
-  = f.text_field :_id, :class => 'text_field'
-  %span.description Ex: a simple text
-.group
   = f.label :name, t("activerecord.attributes.project.name", :default => "Name"), :class => :label
   = f.text_field :name, :class => 'text_field'
   %span.description Ex: a simple text
 .group
+  = f.label :time, t("activerecord.attributes.project.time", :default => "Hours of Work"), :class => :label
+  = f.text_field :time, :class => 'text_field'
+  %span.description Ex: a simple text
+
+.group
   = f.label :description, t("activerecord.attributes.project.description", :default => "Description"), :class => :label
-  = f.text_field :description, :class => 'text_field'
+  = f.text_area :description, :rows=>10, :class => 'text_field'
   %span.description Ex: a simple text
 .group
   = f.label :skills, t("activerecord.attributes.project.skills", :default => "Skills"), :class => :label
-  = f.text_field :skills, :class => 'text_field'
-  %span.description Ex: a simple text
-.group
-  = f.label :time, t("activerecord.attributes.project.time", :default => "Time"), :class => :label
-  = f.text_field :time, :class => 'text_field'
+  = f.text_area :skills, :rows=>10,:class => 'text_field'
   %span.description Ex: a simple text
 .group.navform.wat-cf
   %button.button{:type => "submit"}
