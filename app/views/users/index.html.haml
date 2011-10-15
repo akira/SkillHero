@@ -1,25 +1,19 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", users_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_user_path
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "Heroes")}", users_path
   .content
     %h2.title
-      = t("web-app-theme.all", :default => "All")
-      Users
+      Heroes
     .inner
       %table.table
         %tr
-          %th.first First Name
-          %th Last Name
+          %th.first Name
           %th.last Title
         - @users.each do |user|
           %tr{:class => cycle("odd", "even")}
-            %td{:width=>'120px'}
-              = user.first_name
-            %td
-              = user.last_name          
-            %td.last
+            %td{:width=>'120px'}= link_to "#{user.first_name} #{user.last_name}", user
+            %td.last{:width=>'500px'}
               = user.job_title              
       .actions-bar.wat-cf
         .actions

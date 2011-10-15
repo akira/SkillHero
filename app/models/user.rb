@@ -8,4 +8,6 @@ class User
   field :job_title
   field :location
   field :linked_in_url
+  
+  has_many :projects
 end

@@ -5,4 +5,7 @@ class Project
   field :skills, :type => String
   field :time, :type => String  
   field :created_at, :type => Date    
+  
+  belongs_to :users
+  belongs_to :non_profits  
 end

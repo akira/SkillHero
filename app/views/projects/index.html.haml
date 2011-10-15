@@ -1,8 +1,9 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", projects_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_project_path
+      %li.first.active= link_to "Projects", projects_path
+      - if current_non_profit
+        %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_project_path
   .content
     %h2.title
       Available Projects
@@ -16,17 +17,18 @@
         - @projects.each do |project|
           %tr{:class => cycle("odd", "even")}
             %td{:width=>'250px'}
-              = project.name
+              = link_to project.name, project
             %td
               = project.description
             %td
-              = project.time
-              
+              = project.time            
             %td.last
-              = link_to "#{t("web-app-theme.show", :default => "Show")}", project_path(project)
-              |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_project_path(project)} |
-              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", project_path(project), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+              - if current_non_profit
+                = link_to "#{t("web-app-theme.show", :default => "Show")}", project_path(project)
+                |\#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_project_path(project)} |
+                \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", project_path(project), :method => :delete, :confirm    =>"#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+              - elsif current_user
+                = link_to "Join Project", join_project_path(project), :method=>:post
       .actions-bar.wat-cf
         .actions
 - content_for :sidebar, render(:partial => 'sidebar')

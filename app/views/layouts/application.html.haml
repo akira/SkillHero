@@ -28,8 +28,9 @@
               %a{:href => "/users"}= t("web-app-theme.profile", :default => "Heroes")
             %li
               %a{:href => "/non_profits"}= t("web-app-theme.profile", :default => "Non Profits")          
-            %li
-              %a.logout{:href => "/logout"}= t("web-app-theme.logout", :default => "Logout")
+            - if current_user || current_non_profit
+              %li
+                %a.logout{:href => "/logout"}= t("web-app-theme.logout", :default => "Logout")
         #main-navigation
           %ul.wat-cf
       #wrapper.wat-cf

@@ -10,4 +10,5 @@ class NonProfit
   field :password, :type => String  
   
   validates_presence_of :name, :email, :password, :city, :state
+  has_many :projects
 end
