@@ -8,16 +8,6 @@
     .inner
       %p
         %b
-          = t("activerecord.attributes.project._type", :default => t("activerecord.labels._type", :default => " type"))
-          \:
-        = @project._type
-      %p
-        %b
-          = t("activerecord.attributes.project._id", :default => t("activerecord.labels._id", :default => ""))
-          \:
-        = @project._id
-      %p
-        %b
           = t("activerecord.attributes.project.name", :default => t("activerecord.labels.name", :default => "Name"))
           \:
         = @project.name

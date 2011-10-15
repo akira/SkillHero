@@ -9,5 +9,5 @@ class NonProfit
   field :email, :type => String        
   field :password, :type => String  
   
-  validates_presence_of :name, :email, :password
+  validates_presence_of :name, :email, :password, :city, :state
 end

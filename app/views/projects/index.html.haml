@@ -10,19 +10,19 @@
     .inner
       %table.table
         %tr
-          %th.first ID
-          %th
-            = t("activerecord.attributes.project._type", :default => t("activerecord.labels._type", :default => "_type"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th.first Name
+          %th 
+          %th Description
           %th.last &nbsp;
         - @projects.each do |project|
           %tr{:class => cycle("odd", "even")}
+            %td{:width=>'250px'}
+              = project.name
             %td
-              = project.id
+              = project.description
             %td
-              = link_to project._type, project_path(project)
-            %td
-              = project.created_at
+              = project.time
+              
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", project_path(project)
               |

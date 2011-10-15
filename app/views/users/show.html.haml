@@ -33,9 +33,18 @@
         %b
           = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "LinkIn Profile"))
           \:
-        = link_to @user.linked_in_url,@user.linked_in_url, :target=>'_blank'
+        = link_to @user.linked_in_url,@user.linked_in_url, :target=>'blank'
 
       .wat-cf
-        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_user_path(@user), :class => "button"
-        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), user_path(@user), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+
+      %h3 Your Projects:
+      - if Project.all.blank?
+        %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
+      %ul
+        - Project.all.each do |project|
+          %li= link_to project.name, project_path(project)
+      
 - content_for :sidebar, render(:partial => 'sidebar')
+
+
+
