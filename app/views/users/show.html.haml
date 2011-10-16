@@ -63,11 +63,14 @@
           %p
             * 
             = link_to user_project.project.name, project_path(user_project.project) if user_project.project
+            - if user_project && user_project.user_project_rating
+              Rating: 
+              = stars_for_rating(user_project.user_project_rating.rating).html_safe                        
         - if current_user          
           %h4 #{link_to 'Volunteer for another Project', projects_url}      
 
       %h3 Completed Projects:
-      %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
+      %h4 You have no projects.   
 
       %h3 Badges
       - if @user.user_badges.blank?
