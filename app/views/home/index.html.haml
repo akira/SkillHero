@@ -1,13 +1,13 @@
-%h2 Are you a(n):
+%p.intro Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 %table{:width=>'100%'}
   %tr
     %td
-      %h3= link_to 'Non-Profit?', non_profit_info_path  
+      %h3= link_to image_tag('BeAHero.png'), volunteer_info_path
     %td
-      %h3= link_to 'Volunteer?', volunteer_info_path
+      %h3= link_to image_tag('nonprofit.png'), non_profit_info_path  
     %td
-      %h3= link_to 'Enterprise or sponsor?', company_info_path
+      %h3= link_to image_tag('enterprise.png'), company_info_path
 %br 
 %br #{link_to '* I just want to browse available projects', projects_path}
 %br 

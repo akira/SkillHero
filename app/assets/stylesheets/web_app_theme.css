@@ -22,13 +22,17 @@ div.ratingstar {
 }
 
 div.ratingstar > * {
-	padding-top: 25px;
+	padding-top: 12px;
 }
 
 div.ratingnum {
 	display: inline;
 	margin-left: 5px;
 	vertical-align: 15px;
+}
+
+p.intro {
+	font-size: 16px;
 }
 
 #herodetails {

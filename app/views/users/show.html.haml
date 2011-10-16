@@ -12,7 +12,7 @@
         - if @user.average_rating
           %div.rating
             %div.ratingstar= stars_for_rating(@user.average_rating.to_i).html_safe                        
-            %div.ratingnum (12)
+            %div.ratingnum (#{@user.user_projects.inject(0){|sum, up| sum + (up.user_project_rating ? 1 : 0)}}) 
       #herodetails
         %p
           %b
