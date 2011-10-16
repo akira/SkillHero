@@ -23,4 +23,16 @@ class User
     user_projects.create! :project=>project
     save!
   end
+  
+  def average_rating
+    ratings = []
+    user_projects.each do |up|
+      ratings << up.user_project_rating.rating if up && up.user_project_rating && up.user_project_rating.rating
+    end
+    if(ratings.blank?)
+      nil
+    else
+      ratings.sum / ratings.size.to_f
+    end
+  end
 end
