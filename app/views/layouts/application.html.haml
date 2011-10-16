@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title SkillHero
+    %title skillHero
     = stylesheet_link_tag 'web_app_theme'
     = javascript_include_tag :defaults, :cache => true
     = javascript_include_tag 'jquery.js'
@@ -13,9 +13,9 @@
         %h1
           - if current_user
             %li
-              = link_to 'SkillHero', user_url(current_user)              
+              = link_to 'skill-hero', user_url(current_user)              
           - else          
-            %a{:href => "/"} SkillHero
+            %a{:href => "/"} skill-hero
         #user-navigation
           %ul.wat-cf
             - if current_user
