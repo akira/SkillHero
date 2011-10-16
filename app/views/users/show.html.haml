@@ -2,7 +2,8 @@
   .secondary-navigation
     %ul.wat-cf
       %li.first.active= link_to "#{t("web-app-theme.show", :default => "#{@user.first_name} #{@user.last_name}")}", user_path    
-      %li= link_to "Your Projects", user_projects_path(:user_id=>@user)
+      - if current_user
+        %li= link_to "Your Projects", user_projects_path(:user_id=>@user)
   .content
     .inner
       %p
