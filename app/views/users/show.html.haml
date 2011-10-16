@@ -10,7 +10,9 @@
         %b
           %div.pic= image_tag @user.profile_image_url
         - if @user.average_rating
-          %div.rating= stars_for_rating(@user.average_rating.to_i).html_safe                        
+          %div.rating
+            %div.ratingstar= stars_for_rating(@user.average_rating.to_i).html_safe                        
+            %div.ratingnum (12)
       #herodetails
         %p
           %b

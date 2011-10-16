@@ -17,8 +17,18 @@ div.pic {
 	margin-right: 15px;
 }
 
-div.rating {
-	padding-top: 15px;
+div.ratingstar {
+	display: inline;
+}
+
+div.ratingstar > * {
+	padding-top: 25px;
+}
+
+div.ratingnum {
+	display: inline;
+	margin-left: 5px;
+	vertical-align: 15px;
 }
 
 #herodetails {
