@@ -12,7 +12,9 @@ class User
   field :link_in_token
   field :link_in_secret
   field :skills
-  field :experience    
+  field :experience
+  field :volunteer_interests      
+  field :motivation
   
   has_many :user_projects    
   

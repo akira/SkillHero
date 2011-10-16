@@ -57,4 +57,6 @@
             = link_to user_project.project.name, project_path(user_project.project)
         - if current_user          
           %h4 #{link_to 'Volunteer for another Project', projects_url}      
+      - if current_user == @user
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "Edit") + " " + "Edit Account", edit_user_path(@user), :class => "button"      
 - content_for :sidebar, render(:partial => 'sidebar')

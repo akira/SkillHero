@@ -11,6 +11,14 @@
   = f.label :experience, "Experience", :class => :label
   = f.text_area :experience, :class => 'text_field', :rows=>5
   %span.description Ex: Worked 3 years as web designer
+.group
+  = f.label :volunteer_interests, "Volunteer Interests", :class => :label
+  = f.text_area :volunteer_interests, :class => 'text_field', :rows=>5
+  %span.description Ex: Interested in learning or doing...
+.group
+  = f.label :motivation, "Motivation", :class => :label
+  = f.text_area :motivation, :class => 'text_field', :rows=>5
+  %span.description Ex: Why are you doing this instead of sitting home and watching football / dancing with the stars?
 
 .group.navform.wat-cf
   %button.button{:type => "submit"}
