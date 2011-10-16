@@ -9,6 +9,8 @@
       %p
         %b
           = image_tag @user.profile_image_url
+      - if @user.average_rating
+        = stars_for_rating(@user.average_rating.to_i).html_safe                        
       %p
         %b
           = t("activerecord.attributes.user.first_name", :default => t("activerecord.labels.first_name", :default => "Hero name"))
@@ -70,6 +72,9 @@
           %p
             * 
             = link_to user_project.project.name, project_path(user_project.project) if user_project.project
+            - if user_project && user_project.user_project_rating
+              Rating: 
+              = stars_for_rating(user_project.user_project_rating.rating).html_safe                        
         - if current_user          
           %h4 #{link_to 'Volunteer for another Project', projects_url}      
 
