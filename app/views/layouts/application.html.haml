@@ -12,10 +12,9 @@
       #header
         %h1
           - if current_user
-            %li
-              = link_to 'skill+hero', user_url(current_user)              
+            = link_to image_tag('skillHero.gif'), user_url(current_user)              
           - else          
-            %a{:href => "/"} skill+hero
+            %a{:href => "/"}= image_tag 'skillHero.gif'
         #user-navigation
           %ul.wat-cf
             - if current_user

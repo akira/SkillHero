@@ -13,5 +13,19 @@ h3 {
 }
 
 div.rating {
-	float: left;
+	display: inline;
 }
+
+#header {                                                                                                                                                                                                                                      
+	background: #82bc55;                                                                                                                                                                                                                         
+}
+
+#header h1 {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+#header > img {
+	margin: 0px;
+}
+

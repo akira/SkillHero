@@ -45,7 +45,8 @@
                 &nbsp;
                 = link_to "(Rate User)".html_safe, new_user_project_rating_path(:user_id=>user_project.user.id, :user_project_id=>user_project.id)
       %br
-      - if current_user
+      - if current_user && current_user.user_projects.detect{ |up|up.project == @project   }.blank?
+
         = link_to "Apply to Project", join_project_path(@project), :method=>:post
       - if current_non_profit
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_project_path(@project), :class => "button"

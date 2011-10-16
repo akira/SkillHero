@@ -8,7 +8,7 @@
     .inner
       %p
         %b
-          = image_tag @user.profile_image_url
+          %div.pic= image_tag @user.profile_image_url
         - if @user.average_rating
           %div.rating= stars_for_rating(@user.average_rating.to_i).html_safe                        
       %p
