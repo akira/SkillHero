@@ -5,7 +5,7 @@ StartupWeekend::Application.routes.draw do
   resources :badges
   resources :projects do 
     member do 
-      get :join
+      post :join
     end
   end
   resources :non_profits 
