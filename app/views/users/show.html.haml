@@ -54,7 +54,7 @@
           = @user.volunteer_interests
       .wat-cf
 
-      %h3 Active Projects:
+      %h3 Active projects
       - if @user.user_projects.blank?
         - if current_user
           %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
@@ -66,7 +66,7 @@
         - if current_user          
           %h4 #{link_to 'Volunteer for another Project', projects_url}      
 
-      %h3 Completed Projects:
+      %h3 Completed projects
       - if @user.user_projects.blank?
         - if current_user
           %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
