@@ -12,8 +12,18 @@ h3 {
 	margin-top: 40px;
 }
 
+div.pic {
+	float: left;
+	margin-right: 15px;
+}
+
 div.rating {
-	display: inline;
+	padding-top: 15px;
+}
+
+#herodetails {
+	clear: both;
+	margin-top: 50px;
 }
 
 #header {                                                                                                                                                                                                                                      
