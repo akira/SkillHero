@@ -74,7 +74,7 @@
         - @user.user_projects.each do |user_project|
           %p
             * 
-            = link_to user_project.project.name, project_path(user_project.project)
+            = link_to user_project.project.name, project_path(user_project.project) if user_project.project
         - if current_user          
           %h4 #{link_to 'Volunteer for another Project', projects_url}      
 
