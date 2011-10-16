@@ -2,7 +2,7 @@
   .secondary-navigation
     %ul.wat-cf
       %li.first.active= link_to "#{t("web-app-theme.show", :default => "#{current_user.first_name} #{current_user.last_name}")}", user_path    
-      %li= link_to "Your Projects", projects_path
+      %li= link_to "Your Projects", user_projects_path(:user_id=>@user)
   .content
     .inner
       %p
@@ -40,10 +40,9 @@
       - if current_user.user_projects.blank?
         - if current_user
           %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
-      - else
-        %ul
-          - current_user.user_projects.each do |user_project|
-            %li= link_to user_project.project.name, project_path(user_project.project)
+      - else        
+        - current_user.user_projects.each do |user_project|
+          %p= link_to user_project.project.name, project_path(user_project.project)
         - if current_user          
           %h4 #{link_to 'Volunteer for another Project', projects_url}      
 - content_for :sidebar, render(:partial => 'sidebar')

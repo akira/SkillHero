@@ -12,7 +12,7 @@ class User
   field :link_in_token
   field :link_in_secret
   
-  embeds_many :user_projects    
+  has_many :user_projects    
   
   def join_project(project)
     user_projects.create! :project=>project

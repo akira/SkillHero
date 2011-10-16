@@ -6,6 +6,5 @@ class Project
   field :time, :type => String  
   field :created_at, :type => Date    
   
-  belongs_to :user
   belongs_to :non_profit
 end

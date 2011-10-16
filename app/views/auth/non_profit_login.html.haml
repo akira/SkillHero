@@ -1,0 +1,25 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "List", non_profits_path
+      %li.active= link_to "New", new_non_profit_path
+  .content
+    %h2.title
+      = t("web-app-theme.new", :default => "New")
+      NonProfit
+    .inner
+      = form_for :non_profit, :url => non_profit_login_path, :html => { :class => :form } do |f|
+        - if @non_profit.errors.any?
+          .line.bottom15
+            - for message in @non_profit.errors.full_messages
+              %p.fail= message        
+        .group
+          = f.label :email, t("activerecord.attributes.non_profit.email", :default => "Email"), :class => :label
+          = f.text_field :email, :class => 'text_field'
+          %span.description Ex: habitat@habitat.org
+        .group
+          = f.label :password, t("activerecord.attributes.non_profit.password", :default => "Password"), :class => :label
+          = f.password_field :password, :class => 'text_field'
+          %span.description Ex: opensesame
+        .group
+          = f.submit "Login"

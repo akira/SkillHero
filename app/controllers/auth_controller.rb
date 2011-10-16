@@ -1,6 +1,7 @@
+#TODO: plugin devise later
 class AuthController < ApplicationController
   
-  
+  #TODO: this is only a demo.  Please bcrypt password
   def callback
     puts request.env['omniauth.auth'].to_yaml
     info = request.env['omniauth.auth']
@@ -22,6 +23,23 @@ class AuthController < ApplicationController
     session[:user_id] = @user.id        
     redirect_to user_url(@user.id)
   end
+  
+  def non_profit_login
+    @non_profit = NonProfit.new(params[:non_profit])    
+    if(request.post?)
+      existing_non_profit = NonProfit.first(conditions: {email: @non_profit.email, password: @non_profit.password})
+      if(existing_non_profit)
+        session[:non_profit_id] = existing_non_profit.id
+        redirect_to existing_non_profit
+      else
+        @non_profit.errors.add(:base, "Incorrect username or password")
+      end
+    else
+      #render
+    end  
+  end
+  
+  
   
   def logout
     [:user_id, :non_profit_id].each{|key| session[key] = nil}

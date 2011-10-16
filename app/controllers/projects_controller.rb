@@ -1,7 +1,11 @@
 class ProjectsController < InheritedResources::Base
   
   def index
-    @projects = Project.all    
+    if params[:user_id]
+      @projects = User.find(params[:user_id]).user_projects.collect(&:project)
+    else
+      @projects = Project.all    
+    end
   end
   
   def join

@@ -1,17 +1,20 @@
 StartupWeekend::Application.routes.draw do
-  resources :users
+  resources :users do 
+    resources :projects
+  end
   resources :projects do 
     member do 
       get :join
     end
   end
-  resources :non_profits
+  resources :non_profits 
   resources :companies
   
   match 'volunteer'=>"home#volunteer", :as=>:volunteer_info
   match 'non_profit'=>"home#non_profit", :as=>:non_profit_info
   match 'company'=>"home#company", :as=>:company_info
   match '/auth/linked_in/callback'=>"auth#callback"
+  match 'non_profit_login'=>"auth#non_profit_login", :as=>:non_profit_login
   match 'logout'=>"auth#logout", :as=>:logout  
   root :to => "home#index"
   
