@@ -54,7 +54,7 @@
           = @user.volunteer_interests
       .wat-cf
 
-      %h3 Volunteer Projects:
+      %h3 Active Projects:
       - if @user.user_projects.blank?
         - if current_user
           %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
@@ -65,6 +65,28 @@
             = link_to user_project.project.name, project_path(user_project.project)
         - if current_user          
           %h4 #{link_to 'Volunteer for another Project', projects_url}      
+
+      %h3 Completed Projects:
+      - if @user.user_projects.blank?
+        - if current_user
+          %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
+      - else        
+        - @user.user_projects.each do |user_project|
+          %p
+            * 
+            = link_to user_project.project.name, project_path(user_project.project)
+        - if current_user          
+          %h4 #{link_to 'Volunteer for another Project', projects_url}      
+
+      %h3 Badges
+      - if @user.user_badges.blank?
+        %h4 You have no Badges
+      - else
+        - @user.user_badges.each do |user_badge|
+          %p
+            * 
+            = link_to image_tag(user_badge.badge.photo_url), badge_path(user_badge.badge)      
+      = link_to('+', user_badges_path) if current_user
       - if current_user == @user
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "Edit") + " " + "Edit Account", edit_user_path(@user), :class => "button"      
 - content_for :sidebar, render(:partial => 'sidebar')

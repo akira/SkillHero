@@ -10,6 +10,7 @@ StartupWeekend::Application.routes.draw do
   end
   resources :non_profits 
   resources :companies
+  resources :user_badges
   
   match 'volunteer'=>"home#volunteer", :as=>:volunteer_info
   match 'non_profit'=>"home#non_profit", :as=>:non_profit_info
