@@ -13,9 +13,9 @@
         %h1
           - if current_user
             %li
-              = link_to 'skill-hero', user_url(current_user)              
+              = link_to 'skill+hero', user_url(current_user)              
           - else          
-            %a{:href => "/"} skill-hero
+            %a{:href => "/"} skill+hero
         #user-navigation
           %ul.wat-cf
             - if current_user
@@ -29,7 +29,7 @@
             %li
               %a{:href => "/users"}= t("web-app-theme.profile", :default => "Heroes")
             %li
-              %a{:href => "/non_profits"}= t("web-app-theme.profile", :default => "Non Profits")          
+              %a{:href => "/non_profits"}= t("web-app-theme.profile", :default => "Non-Profits")          
             - if current_user || current_non_profit
               %li
                 %a.logout{:href => "/logout"}= t("web-app-theme.logout", :default => "Logout")
@@ -45,6 +45,6 @@
           #footer
             .block
               %p
-                Copyright &copy; #{Time.now.year} SkillHero.
+                Copyright &copy; #{Time.now.year} skill+hero.
         #sidebar
           = yield :sidebar
