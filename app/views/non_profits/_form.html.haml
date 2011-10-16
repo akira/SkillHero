@@ -7,6 +7,10 @@
   = f.text_field :name, :class => 'text_field'
   %span.description Ex: Habitat for Humanity
 .group
+  = f.label :description, t("activerecord.attributes.non_profit.name", :default => "Description"), :class => :label
+  = f.text_area :description, :rows=>3
+  %span.description Ex: Habitat for Humanity
+.group
   = f.label :email, t("activerecord.attributes.non_profit.email", :default => "* Email"), :class => :label
   = f.text_field :email, :class => 'text_field'
   %span.description Ex: habitat@gmail.com
