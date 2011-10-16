@@ -1,20 +1,20 @@
 .group
   = f.label :name, t("activerecord.attributes.project.name", :default => "Name"), :class => :label
   = f.text_field :name, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: Name of project.. Build a house
 .group
   = f.label :time, t("activerecord.attributes.project.time", :default => "Hours of Work"), :class => :label
   = f.text_field :time, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: Number of hours
 
 .group
   = f.label :description, t("activerecord.attributes.project.description", :default => "Description"), :class => :label
   = f.text_area :description, :rows=>5, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: Description
 .group
-  = f.label :skills, t("activerecord.attributes.project.skills", :default => "Skills"), :class => :label
+  = f.label :skills, t("activerecord.attributes.project.skills", :default => "Skills Need"), :class => :label
   = f.text_area :skills, :rows=>5,:class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: CPA, Web Design, Legal
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
