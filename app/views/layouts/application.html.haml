@@ -26,9 +26,8 @@
                 = link_to current_non_profit.name, non_profit_url(current_non_profit)                          
             %li
               %a{:href => "/projects"}= t("web-app-theme.profile", :default => "Open Projects")
-            - if current_non_profit
-              %li
-                %a{:href => "/badges"}= t("web-app-theme.profile", :default => "Badges")              
+            %li
+              %a{:href => "/badges"}= t("web-app-theme.profile", :default => "Badges")              
             %li
               %a{:href => "/users"}= t("web-app-theme.profile", :default => "Heroes")
             %li
