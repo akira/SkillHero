@@ -9,8 +9,8 @@
       %p
         %b
           = image_tag @user.profile_image_url
-      - if @user.average_rating
-        %div.rating= stars_for_rating(@user.average_rating.to_i).html_safe                        
+        - if @user.average_rating
+          %div.rating= stars_for_rating(@user.average_rating.to_i).html_safe                        
       %p
         %b
           = t("activerecord.attributes.user.first_name", :default => t("activerecord.labels.first_name", :default => "Hero name"))
