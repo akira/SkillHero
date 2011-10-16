@@ -11,17 +11,13 @@
           = image_tag @user.profile_image_url
       %p
         %b
-          = t("activerecord.attributes.user.first_name", :default => t("activerecord.labels.first_name", :default => "First name"))
+          = t("activerecord.attributes.user.first_name", :default => t("activerecord.labels.first_name", :default => "Hero name"))
           \:
         = @user.first_name
-      %p
-        %b
-          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "Last name"))
-          \:
         = @user.last_name
       %p
         %b
-          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "Job Title"))
+          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "Job title"))
           \:
         = @user.job_title
       %p
@@ -31,7 +27,7 @@
         = @user.location
       %p
         %b
-          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "LinkIn Profile"))
+          = t("activerecord.attributes.user.last_name", :default => t("activerecord.labels.last_name", :default => "LinkedIn profile"))
           \:
         = link_to @user.linked_in_url,@user.linked_in_url, :target=>'blank'
       - unless @user.skills.blank?
@@ -49,12 +45,23 @@
       - unless @user.volunteer_interests.blank?
         %p
           %b
-            = "Volunteer Interest"
+            = "Volunteer interest"
             \:
           = @user.volunteer_interests
       .wat-cf
 
+      %h3 Badges
+      %hr
+      - if @user.user_badges.blank?
+        %h4 You have no Badges
+      - else
+        - @user.user_badges.each do |user_badge|
+          %p
+            * 
+            = link_to image_tag(user_badge.badge.photo_url), badge_path(user_badge.badge)      
+
       %h3 Active projects
+      %hr
       - if @user.user_projects.blank?
         - if current_user
           %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
@@ -69,14 +76,6 @@
       %h3 Completed projects
       %h4 You have no projects. 
 
-      %h3 Badges
-      - if @user.user_badges.blank?
-        %h4 You have no Badges
-      - else
-        - @user.user_badges.each do |user_badge|
-          %p
-            * 
-            = link_to image_tag(user_badge.badge.photo_url), badge_path(user_badge.badge)      
       = link_to('+', user_badges_path) if current_user
       - if current_user == @user
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "Edit") + " " + "Edit Account", edit_user_path(@user), :class => "button"      
