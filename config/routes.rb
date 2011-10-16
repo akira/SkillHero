@@ -1,7 +1,10 @@
 StartupWeekend::Application.routes.draw do
   resources :users do 
-    resources :projects
+    resources :projects do 
+
+    end    
   end
+  resources :user_project_ratings  
   resources :badges
   resources :projects do 
     member do 

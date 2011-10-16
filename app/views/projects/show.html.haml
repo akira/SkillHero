@@ -29,7 +29,17 @@
       %h2 People Helping:
       %ul
         - UserProject.where(project_id: @project.id).each do |user_project|
-          %li=link_to "#{user_project.user.first_name} #{user_project.user.last_name}", user_project.user
+          %li
+            = link_to "#{user_project.user.first_name} #{user_project.user.last_name}", user_project.user
+            - if user_project && user_project.user_project_rating
+              Rating: 
+              = stars_for_rating(user_project.user_project_rating.rating).html_safe
+              - if current_non_profit && @project.non_profit == current_non_profit
+                = link_to "(Edit Rating)".html_safe, edit_user_project_rating_path(:id=>user_project.user_project_rating.id, :user_id=>user_project.user.id, :user_project_id=>user_project.id)
+            - else
+              - if current_non_profit && @project.non_profit == current_non_profit
+                &nbsp;
+                = link_to "(Rate User)".html_safe, new_user_project_rating_path(:user_id=>user_project.user.id, :user_project_id=>user_project.id)
       %br
       - if current_user
         = link_to "Apply to Project", join_project_path(@project)

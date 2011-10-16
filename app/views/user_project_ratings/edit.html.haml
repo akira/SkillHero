@@ -1,0 +1,14 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", user_project_ratings_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_user_project_rating_path
+      %li.active= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_user_project_rating_path
+  .content
+    %h2.title
+      = t("web-app-theme.edit", :default => "Edit")
+      UserProjectRating
+    .inner
+      = form_for @user_project_rating, :url => user_project_rating_path(@user_project_rating), :html => { :class => :form } do |f|
+        = render :partial => "form", :locals => {:f => f}
+- content_for :sidebar, render(:partial => 'sidebar')

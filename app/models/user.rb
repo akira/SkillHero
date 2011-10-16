@@ -16,7 +16,7 @@ class User
   field :volunteer_interests      
   field :motivation
   
-  has_many :user_projects    
+  has_many :user_projects, :dependent=>:delete    
   embeds_many :user_badges
   
   def join_project(project)

@@ -1,0 +1,16 @@
+= hidden_field_tag :user_project_id, params[:user_project_id]
+= hidden_field_tag :user_id, params[:user_id]
+.group
+  = f.label :rating, t("activerecord.attributes.user_project_rating.rating", :default => "Rating"), :class => :label
+  = f.collection_select :rating, ['Select Rating',1,2,3,4,5], :to_s, :to_s
+  %span.description Ex: a simple text
+.group
+  = f.label :review, t("activerecord.attributes.user_project_rating.review", :default => "Review"), :class => :label
+  = f.text_area :review, :class => 'text_field'
+  %span.description Ex: Great volunteer!
+.group.navform.wat-cf
+  %button.button{:type => "submit"}
+    = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
+    = t("web-app-theme.save", :default => "Save")
+  %span.text_button_padding= t("web-app-theme.or", :default => "or")
+  = link_to t("web-app-theme.cancel", :default => "Cancel"), user_project_ratings_path, :class => "text_button_padding link_button"
