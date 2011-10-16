@@ -8,8 +8,11 @@ class User
   field :job_title
   field :location
   field :linked_in_url
+  field :linked_in_uid
+  field :link_in_token
+  field :link_in_secret
   
-  embeds_many :user_projects
+  embeds_many :user_projects    
   
   def join_project(project)
     user_projects.create! :project=>project
