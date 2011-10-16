@@ -2,6 +2,7 @@ StartupWeekend::Application.routes.draw do
   resources :users do 
     resources :projects
   end
+  resources :badges
   resources :projects do 
     member do 
       get :join

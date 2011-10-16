@@ -1,0 +1,30 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", badges_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_badge_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      Badges
+    .inner
+      %table.table
+        %tr
+          %th.first Name
+          %th Description
+          %th Images
+          %th.last &nbsp;
+        - @badges.each do |badge|
+          %tr{:class => cycle("odd", "even")}
+            %td= badge.name
+            %td= badge.description
+            %td= image_tag(badge.photo_url)
+              
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", badge_path(badge)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_badge_path(badge)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", badge_path(badge), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+- content_for :sidebar, render(:partial => 'sidebar')

@@ -17,6 +17,7 @@ class User
   field :motivation
   
   has_many :user_projects    
+  embeds_many :user_badges
   
   def join_project(project)
     user_projects.create! :project=>project
