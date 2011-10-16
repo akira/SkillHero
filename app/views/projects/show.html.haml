@@ -32,7 +32,7 @@
           %li=link_to "#{user_project.user.first_name} #{user_project.user.last_name}", user_project.user
       %br
       - if current_user
-        = link_to "Join Project", join_project_path(@project)
+        = link_to "Apply to Project", join_project_path(@project)
       - if current_non_profit
         = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_project_path(@project), :class => "button"
         = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), project_path(@project), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"

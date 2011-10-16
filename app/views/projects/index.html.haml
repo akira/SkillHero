@@ -10,16 +10,16 @@
     .inner
       %table.table
         %tr
-          %th.first Name
-          %th 
+          %th.first Non Profit
+          %th Name
           %th Description
+          %th Hours needed
           %th.last &nbsp;
         - @projects.each do |project|
           %tr{:class => cycle("odd", "even")}
-            %td{:width=>'250px'}
-              = link_to project.name, project
-            %td
-              = project.description
+            %td{:width=>'250px'}= link_to project.non_profit.name, project.non_profit
+            %td= link_to project.name, project
+            %td= project.description
             %td
               = project.time            
             %td.last
@@ -28,7 +28,7 @@
                 | #{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_project_path(project)} 
                 | #{link_to "#{t("web-app-theme.delete", :default => "Delete")}", project_path(project), :method => :delete, :confirm    =>"#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
               - elsif current_user
-                = link_to "Join Project", join_project_path(project), :method=>:post
+                = link_to "Apply to Project", join_project_path(project), :method=>:post
       .actions-bar.wat-cf
         .actions
 - content_for :sidebar, render(:partial => 'sidebar')
