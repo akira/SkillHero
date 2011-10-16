@@ -21,7 +21,11 @@ class AuthController < ApplicationController
         :linked_in_secret=>info['credentials']['secret']      
     end      
     session[:user_id] = @user.id        
-    redirect_to user_url(@user.id)
+    if(!@user.email.blank?)
+      redirect_to user_url(@user.id)      
+    else
+      redirect_to edit_user_url(@user.id)        
+    end
   end
   
   def non_profit_login

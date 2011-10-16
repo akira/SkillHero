@@ -9,11 +9,11 @@
 
 .group
   = f.label :description, t("activerecord.attributes.project.description", :default => "Description"), :class => :label
-  = f.text_area :description, :rows=>10, :class => 'text_field'
+  = f.text_area :description, :rows=>5, :class => 'text_field'
   %span.description Ex: a simple text
 .group
   = f.label :skills, t("activerecord.attributes.project.skills", :default => "Skills"), :class => :label
-  = f.text_area :skills, :rows=>10,:class => 'text_field'
+  = f.text_area :skills, :rows=>5,:class => 'text_field'
   %span.description Ex: a simple text
 .group.navform.wat-cf
   %button.button{:type => "submit"}
