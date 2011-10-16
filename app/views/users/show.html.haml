@@ -47,11 +47,11 @@
       .wat-cf
 
       %h3 Volunteer Projects:
-      - if current_user.user_projects.blank?
+      - if @user.user_projects.blank?
         - if current_user
           %h4 You have no projects.   #{link_to 'Find a project to volunteer', projects_url}
       - else        
-        - current_user.user_projects.each do |user_project|
+        - @user.user_projects.each do |user_project|
           %p
             * 
             = link_to user_project.project.name, project_path(user_project.project)
