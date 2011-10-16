@@ -6,8 +6,9 @@
   .content
     .inner
       %h2 #{@non_profit.name}
+      %p #{@non_profit.description}
       %br
-      %h3 Current Active Projects:
+      %h3 Current active projects
       %ul
         - @non_profit.projects.each do |project|
           %li= link_to project.name, project

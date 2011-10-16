@@ -27,7 +27,7 @@
                 = link_to "#{t("web-app-theme.show", :default => "View")}", project_path(project)
                 | #{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_project_path(project)} 
                 | #{link_to "#{t("web-app-theme.delete", :default => "Delete")}", project_path(project), :method => :delete, :confirm    =>"#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
-              - elsif current_user
+              - elsif current_user && current_user.user_projects.detect{ |up|up.project == project   }.blank?
                 = link_to "Apply to Project", join_project_path(project), :method=>:post
       .actions-bar.wat-cf
         .actions

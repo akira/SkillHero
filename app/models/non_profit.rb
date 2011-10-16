@@ -8,7 +8,7 @@ class NonProfit
   field :phone, :type => String      
   field :email, :type => String        
   field :password, :type => String  
-  
+  field :description  
   validates_presence_of :name, :email, :password, :city, :state
   has_many :projects
   
