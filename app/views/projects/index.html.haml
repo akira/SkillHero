@@ -6,7 +6,7 @@
         %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_project_path
   .content
     %h2.title
-      Available Projects
+      Available projects
     .inner
       %table.table
         %tr
@@ -17,9 +17,9 @@
           %th.last &nbsp;
         - @projects.each do |project|
           %tr{:class => cycle("odd", "even")}
-            %td{:width=>'250px'}= link_to project.non_profit.name, project.non_profit
-            %td= link_to project.name, project
-            %td= project.description
+            %td{:width=>'230px'}= link_to project.non_profit.name, project.non_profit
+            %td{:width=>'250px'}= link_to project.name, project
+            %td{:width=>'300px'}= project.description
             %td
               = project.time            
             %td.last
