@@ -12,6 +12,10 @@ h3 {
 	margin-top: 40px;
 }
 
+ul {
+	padding-left: 18px;
+}
+
 div.pic {
 	float: left;
 	margin-right: 15px;
