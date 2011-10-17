@@ -1,3 +1,5 @@
 This is the project for PDX Startup weekend 2011.  
 
 skillhero is a skills based matching service for volunteers and non-profits.  
+
+Requires MongoDB
