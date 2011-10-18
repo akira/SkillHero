@@ -18,6 +18,10 @@ group :assets do
   gem 'uglifier'
 end
 
+group :production do 
+  gem 'thin'
+end
+
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'inherited_resources'
